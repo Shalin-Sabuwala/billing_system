@@ -1,0 +1,153 @@
+.set{
+    margin-top: 10%;
+}
+
+.main-div mat-card
+{
+    padding: 0px;
+}
+.form
+{
+    padding:20px;   
+}
+.mat-card-title{
+    padding-top: 50px;
+    padding-bottom: 20px;
+   
+}
+
+
+
+
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('https://images.unsplash.com/photo-1472552944129-b035e9ea3744?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');
+  background-size: cover;
+  background-position: center center;
+ 
+}
+.colorbtn{
+  background-color: #254D6E;
+}
+.pos{
+  margin-top:1%;
+  background-color:#254D6E;
+}
+.text-center{
+  margin-left: -19%;
+}
+.cls{
+  /* margin-top:4%; */
+  margin-bottom:4%;
+}
+.text{
+  margin-left: 45%;
+}
+.containers{
+  margin-top:-2%;
+}
+h3{
+  margin-left: 25px;
+}
+p.text-muted{
+ width: 300px;
+}
+#main {
+  height: 754.400px;
+  display: flex;
+}
+
+#main div {
+  -ms-flex: 1;  /* IE 10 */  
+  flex: 1;
+}
+#header{
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  #main{
+      height: 300px;
+    
+      /*can add new image
+       display: block;
+       box-sizing: border-box;
+       background: url(https://images.unsplash.com/photo-1592886299896-db0229219921?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60) no-repeat;
+       /*width: 360;  Width of new image 
+       height: 500px; 
+       padding-left: 180px; /* Equal to width of new image */
+      
+  }
+ 
+  button{
+    max-width: 146px;
+  }
+h3{
+  margin: 0 auto;
+}
+p.text-muted{
+  width: 200px;
+ }
+ #header {
+  position: relative;
+  width: 100%;
+  display: block;
+ 
+}
+
+#header img {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+
+ 
+  filter: blur(2px);
+  background-size: cover;
+}
+
+#header .up {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  position: fixed;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: black;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#header .btn:hover {
+  background-color: black;
+}
+.login-wrap{
+  display: none;
+}
+
+}
+
+.login-wrap{
+	width: 100%;
+	margin:auto;
+  background:url(https://maxcdn.icons8.com/app/uploads/2016/03/material-1-1000x563.jpg) no-repeat center ;
+  background-size: cover;
+
+  
+}

@@ -1,0 +1,72 @@
+    <div id="header">
+        
+        <img src="https://images.unsplash.com/photo-1527239441953-caffd968d952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="Snow" style="width:100%">  
+   
+   <div class="up">
+    <h3 class="display-4">Welcome To <span style="color: #426382;"><b>Billing System</b></span></h3>
+</div>
+</div>
+
+
+
+
+<div id="content1" class="login-wrap">
+
+    <div class="container cls" style="margin: 0 auto; 
+    padding:90px 70px 50px 70px;">
+            <div class="row no-gutter">
+               
+                <div  class="col-md-6 d-md-flex " style="
+                padding-right: 0px;
+                padding-left: 0px;
+            "><img id="main" src="https://images.unsplash.com/photo-1496262967815-132206202600?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1095&q=80"></div>
+        
+                <!-- The content half -->
+                <div class="col-md-6 bg-light">
+                    <div class="login d-flex align-items-center py-5">
+        
+                        <!-- Demo content-->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-10 col-xl-7 " style="margin: 0 auto;" >
+                                        <img src="assets/img/mk.png" width="50%" style="margin-left: -2%; margin-top:2%; margin-left: 50px;">
+                                   
+                                    <form (ngSubmit)="onSignin(f)" #f="ngForm">
+                                        <div class="form-group mb-3">
+                                            <input type="email" id="email" name="email" ngModel placeholder="Email address" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                        </div>
+                                       
+                                        <div class="form-group mb-3" >
+                                            <input type="password" id="password" name="password" ngModel placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary" >
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <button type="submit" class="btn pos btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign in</button>
+
+                                            </div>
+                                            <div class="col-md-6" >
+                                                <button type="submit" class="btn pos btn-block text-uppercase mb-2 rounded-pill shadow-sm" (click)="forgotPassword()" style="width: 144px; padding-right: 0px;"><span class="text-center" >Reset Password</span></button>
+
+                                            </div>
+                                        </div>
+                                        <div *ngIf="isLoading" style="text-align: center;">
+                                            <app-loading-spinner></app-loading-spinner>
+                                        </div>
+                                    </form>
+                                    
+                                </div>
+                            </div>
+                        </div><!-- End -->
+        
+                    </div>
+                </div><!-- End -->
+        
+            </div>
+        </div>
+
+        <div class="containers" style="margin-top: 0px;">
+            <span class="text"><b>powered by</b> &nbsp;</span><img src="assets/img/mk.png" width="6%">
+        </div>
+
+        
+     </div>   

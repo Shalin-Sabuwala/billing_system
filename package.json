@@ -19,6 +19,7 @@
     "@angular/common": "9.0.6",
     "@angular/compiler": "9.0.6",
     "@angular/core": "9.0.6",
+    "@angular/fire": "^6.0.2",
     "@angular/forms": "9.0.6",
     "@angular/localize": "^9.0.6",
     "@angular/platform-browser": "9.0.6",
@@ -34,15 +35,16 @@
     "chartist": "0.11.2",
     "core-js": "3.6.4",
     "express": "4.17.1",
+    "firebase": "^7.13.1",
     "jquery": "3.4.1",
     "moment": "2.24.0",
-    "ngx-toastr": "10.0.4",
+    "ngx-toastr": "^10.0.4",
     "rxjs": "6.5.4",
     "tslib": "1.11.1",
     "zone.js": "0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "0.900.6",
+    "@angular-devkit/build-angular": "^0.900.6",
     "@angular/cli": "9.0.6",
     "@angular/compiler-cli": "9.0.6",
     "@types/bootstrap": "4.3.0",
@@ -63,6 +65,12 @@
     "protractor": "5.4.3",
     "ts-node": "8.6.2",
     "tslint": "6.1.0",
-    "typescript": "3.7.5"
+    "typescript": "3.7.5",
+    "@angular-devkit/architect": ">= 0.900 < 0.1100",
+    "firebase-tools": "^8.0.0",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.2.2",
+    "inquirer-autocomplete-prompt": "^1.0.1",
+    "open": "^7.0.3"
   }
 }

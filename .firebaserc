@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "billing-system-6e144": {
+      "hosting": {
+        "pd-free-angularcli": [
+          "billing-system-6e144"
+        ]
+      }
+    }
+  }
+}
