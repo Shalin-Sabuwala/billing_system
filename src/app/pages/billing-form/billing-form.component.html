@@ -1,0 +1,169 @@
+<div class="col-md-6">
+    <div class="card card-user">
+        <div class="card-header">
+            <h5 class="card-title">Edit Profile</h5>
+        </div>
+        <div class="card-body">
+            <form   class="needs-validation" [formGroup]='billingForm' (ngSubmit)="PostData()">
+                <div class="row">
+                    <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                            <label>Bill No.</label>
+                            <input type="text" class="form-control"  placeholder="Bill No."
+                                value="" formControlName="billNo" [ngClass]="{ 'is-invalid': submitted && f.billNo?.errors }">
+                                <div *ngIf="submitted && f.billNo?.errors" class="invalid-feedback">
+                                    <div *ngIf="f.billNo?.errors?.required">Bill No. is required</div>
+                                </div>  
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Date</label>
+                            <input type="text" class="form-control" placeholder="Date" class="form-control" bsDatepicker
+                                formControlName="date" #dp="bsDatepicker" [bsConfig]="bsConfig" [ngClass]="{ 'is-invalid': submitted && f.date?.errors }">
+                                <div *ngIf="submitted && f.date?.errors" class="invalid-feedback">
+                                    <div *ngIf="f.date?.errors?.required">Date is required</div>
+                                </div>   
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row">
+                    <!-- <div class="col-md-6 px-1">
+                       
+                    </div> -->
+                    <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" class="form-control" placeholder="EmailId" formControlName="email"
+                                value="" [ngClass]="{ 'is-invalid': submitted && f.email?.errors }">
+                                <div *ngIf="submitted && f.email?.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email?.errors?.required">email is required</div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
+                        <div class="form-group">
+                            <label>Mobile No.</label>
+                            <input type="number" class="form-control" placeholder="MobileNo." formControlName="mobileNo"
+                                value="" [ngClass]="{ 'is-invalid': submitted && f.mobileNo?.errors }" >
+                                <div *ngIf="submitted && f.mobileNo?.errors" class="invalid-feedback">
+                                    <div *ngIf="f.mobileNo?.errors?.required">MobileNo. is required</div>
+                                </div>  
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Customor Name</label>
+                            <input type="text" class="form-control" placeholder="Customor Name" formControlName="customorName"
+                                value="" [ngClass]="{ 'is-invalid': submitted && f.customorName?.errors }" >
+                                <div *ngIf="submitted && f.customorName?.errors" class="invalid-feedback">
+                                    <div *ngIf="f.customorName?.errors?.required">Customor Name is required</div>
+                                </div>  
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Address</label>
+                            <input type="text" class="form-control" placeholder="Address" formControlName="address"
+                                value="" [ngClass]="{ 'is-invalid': submitted && f.address?.errors }">
+                                <div *ngIf="submitted && f.address?.errors" class="invalid-feedback">
+                                    <div *ngIf="f.address?.errors?.required">Address is required</div>
+                                </div>  
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 pr-1">
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" class="form-control" placeholder="City" formControlName="city"
+                                value="" [ngClass]="{ 'is-invalid': submitted && f.city?.errors }">
+                                <div *ngIf="submitted && f.city?.errors" class="invalid-feedback">
+                                    <div *ngIf="f.city?.errors?.required">City is required</div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 px-1">
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input type="text" class="form-control" placeholder="Country" formControlName="country"
+                                value="India" [ngClass]="{ 'is-invalid': submitted && f.country?.errors }">
+                                <div *ngIf="submitted && f.country?.errors" class="invalid-feedback">
+                                    <div *ngIf="f.country?.errors?.required">Country is required</div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 pl-1">
+                        <div class="form-group">
+                            <label>Pin Code</label>
+                            <input type="number" class="form-control" placeholder="Pin Code" formControlName="pinCode" [ngClass]="{ 'is-invalid': submitted && f.pinCode?.errors }">
+                            <div *ngIf="submitted && f.pinCode?.errors" class="invalid-feedback">
+                                <div *ngIf="f.pinCode?.errors?.required">PinCode is required</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div formArrayName="selling_points">
+                            <div *ngFor="let item of sellingPoints.controls; let pointIndex=index"
+                                [formGroupName]="pointIndex">
+                                <div class="col-md-12 pl-1">
+                                    <div class="form-group">
+                                        <label>Product Name</label>
+                                        <input type="text" class="form-control" [formControl]="item.get('productName')">
+                                        <!-- <div *ngIf="submitted && f.item.get('productName')?.errors" class="invalid-feedback">
+                                            <div *ngIf="f.item.get('productName')?.errors?.required">Product Name is required</div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="col-md-12 pl-1">
+                                    <div class="form-group">
+                                        <label>HSN Code No.</label>
+                                        <input type="number" class="form-control" [formControl]="item.get('HSNNo')">
+                                        <!-- <div *ngIf="submitted && f.item.get('HSNNo')?.errors" class="invalid-feedback">
+                                            <div *ngIf="f.item.get('HSNNo')?.errors?.required">HSN Code No. is required</div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="col-md-12 pl-1">
+                                    <div class="form-group">
+                                        <label>PrizeForOnePic</label>
+                                        <input type="text" class="form-control" [formControl]="item.get('qty')">
+                                        <!-- <div *ngIf="submitted && f.item.get('qty')?.errors" class="invalid-feedback">
+                                            <div *ngIf="f.item.get('qty')?.errors?.required">PrizeForOnePic is required</div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="col-md-12 pl-1">
+                                    <div class="form-group">
+                                        <label>Total Product Value</label>
+                                        <input type="text" class="form-control" [formControl]="item.get('total')">
+                                        <!-- <div *ngIf="submitted && f.item.get('total')?.errors" class="invalid-feedback">
+                                            <div *ngIf="f.item.get('total')?.errors?.required">Total Product Value is required</div>
+                                        </div> -->
+                                    </div>
+                                    <!-- <div *ngIf="deleteProduct">  -->
+                                    <i class="nc-icon nc-simple-delete"
+                                    (click)="deleteSellingPoint(pointIndex)"></i></div>
+                                <!-- </div> -->
+                            </div>
+                            <i class="nc-icon nc-simple-add" (click)="addSellingPoint()"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="update ml-auto mr-auto">
+                        <button type="submit" class="btn btn-success btn-round">Update Profile</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
